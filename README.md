@@ -1,6 +1,38 @@
 Arquivos e dicas para facilitar configurações de ambiente de desenvolvimento
 
 ===
+### Virtualenv
+>
+* ``` $ sudo apt-get update ```
+* ``` $ sudo apt-get install python-dev python-setuptools ```
+* ``` $ sudo easy_install pip ```
+* ``` $ sudo pip install virtualenv ```
+### Virtualenvwrapper
+* ``` $sudo pip install virtualenvwrapper ```
+* ``` $mkdir ~/pywork ```    
+> 
+Depois basta editar seu “~/.bashrc” e colocar no final do mesmo:     
+```
+export WORKON_HOME=~/pywork
+source /usr/local/bin/virtualenvwrapper.sh     
+```   
+> Criando Ambientes “–no-site-packages –distribute” por Padrão   
+alterar o seu “~/.bashrc” e colocar no final(além do que tinha sido posto antes) o seguinte código:  
+>
+```
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages --distribute'
+```
+
+>
+Para instalar pacotes na criação do virtualenv, alterar o arquivo: $WORKON_HOME/postmkvirtualenv
+```
+pip install yolk
+pip install ipython
+pip install freeze
+```
+
+===
+
 ### Windows Hack para facilitar o uso do django-admin
 > * Criar um arquivo django-admin.bat para chaamr o django-admin.py
 > * Criar essa .bat dentro do diretório "%VIRTUAL_ENV%"\Scripts
