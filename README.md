@@ -8,8 +8,8 @@ Arquivos e dicas para facilitar configurações de ambiente de desenvolvimento
 * ``` $ sudo easy_install pip ```
 * ``` $ sudo pip install virtualenv ```
 ### Virtualenvwrapper
-* ``` $sudo pip install virtualenvwrapper ```
-* ``` $mkdir ~/pywork ```    
+* ``` $ sudo pip install virtualenvwrapper ```
+* ``` $ mkdir ~/pywork ```    
 > 
 Depois basta editar seu “~/.bashrc” e colocar no final do mesmo:     
 ```
