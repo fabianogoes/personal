@@ -41,4 +41,8 @@ $ manage help
 > 
 * No Windows o arquivo fica em: "C:\Program Files (x86)\Vim\_vimrc" 
 * No Linux o arquivo fica em: "/home/user/.vimrc"  
-
+>>> para resolver o erro: "Unable to create Ubuntu Menu Proxy: Timeout was reached" <<<<      
+add this to ~/.bashrc and restart the     
+```     
+function gvim () { (/usr/bin/gvim -f "$@" &) }
+```     
