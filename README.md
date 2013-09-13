@@ -29,6 +29,7 @@ Para instalar pacotes na criação do virtualenv, alterar o arquivo: $WORKON_HOM
 pip install yolk
 pip install ipython
 pip install freeze
+pip install django
 ```
 
 ===
