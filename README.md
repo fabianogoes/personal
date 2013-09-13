@@ -37,9 +37,8 @@ $ manage help
 ```
 
 
-Configuração do vim      
-
-* No Windows o arquivo fica em: C:\Program Files (x86)\Vim\_vimrc    
----        
-* No Linux o arquivo fica em: /home/user/.vimrc     
+### Configuração do vim      
+> 
+* No Windows o arquivo fica em: "C:\Program Files (x86)\Vim\_vimrc" 
+* No Linux o arquivo fica em: "/home/user/.vimrc"  
 
