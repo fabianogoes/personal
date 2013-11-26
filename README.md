@@ -7,7 +7,9 @@ Arquivos e dicas para facilitar configurações de ambiente de desenvolvimento
 * ``` $ sudo apt-get install python-dev python-setuptools ```
 * ``` $ sudo easy_install pip ```
 * ``` $ sudo pip install virtualenv ```
+
 ### Virtualenvwrapper
+>
 * ``` $ sudo pip install virtualenvwrapper ```
 * ``` $ mkdir ~/pywork ```    
 > 
