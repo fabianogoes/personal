@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block page_context %}
+   
+    <!-- page_context ================================================================================== -->    
+    <div class="container">
+
+        <legend>Exclusão de [{{model_name}}]</legend>
+        Confirma a exclusão do [{{model_name}}]:<br>
+        {{model}}
+        
+        <br><br>
+        <a href="{{url_confirm}}?confirm=ok" class="btn btn-danger">Confirma</a>
+        <a href="{{url_cancel}}" class="btn btn-default">Cancelar</a>
+
+        
+    </div>
+    <!-- page_context ================================================================================== -->   
+
+{% endblock page_context %}
