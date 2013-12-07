@@ -1,3 +1,7 @@
+from django.shortcuts import render, HttpResponseRedirect
+from core.models import *
+from django.core.urlresolvers import reverse
+
 #=== Cliente ===================================================================================
 def clientes(request):
     clientes = Cliente.objects.all()
