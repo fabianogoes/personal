@@ -1,12 +1,33 @@
 from fabric.api import *
 from fabric.colors import *
 
-env.user = 'asisco'
-env.hosts = ['asisco@198.199.106.64']
+env.user = 'vagrant' #'asisco'
+env.password = "vagrant"
+env.hosts = ['vagrant@192.168.33.10'] #['asisco@198.199.106.64']
 env.project_name = "asisco-orderofservice"
-env.root_env = "/deploy"
+env.root_env = "/home/vagrant" #"/deploy"
 env.project_env = "%(root_env)s/%(project_name)s/" % env 
 env.git_host = "https://github.com/fabianogoes/"
+
+@task
+def install_tools(passwd):
+    print(blue("**************************************************"))
+    print(green("apt-get update..."))
+    print(blue("**************************************************"))
+    env.password = passwd
+    sudo("apt-get update")
+    
+    print(blue("**************************************************"))
+    print(green("install tools..."))
+    print(blue("**************************************************"))    
+    sudo("apt-get install python-dev -y")
+    sudo("apt-get install python-setuptools -y")
+    sudo("easy_install pip")
+    sudo("pip install virtualenv")
+    sudo("sudo apt-get install git-core -y")
+
+    deploy(passwd)
+    run_project()
 
 
 @task
@@ -68,9 +89,18 @@ def execute_migrate():
 
 
 @task
-def deploy(paswd=None):
+def run_project():
+    with cd("%(project_env)s" % env):
+        print(blue("**************************************************"))
+        print(green("run project..."))
+        print(blue("**************************************************"))
+        run('DEBUG=True bin/python manage.py runserver 0.0.0.0:9090')
+
+
+@task
+def deploy(passwd=None):
     #exemplo de uso: fab deploy:password=152776
-    env.password = paswd
+    env.password = passwd
     with hide('running'):
         print(green("instaling environment of deploy..."))
         git_clone()
